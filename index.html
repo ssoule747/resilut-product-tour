@@ -30,6 +30,33 @@
    Dark theme · Bloomberg Terminal meets Luxury Real Estate
    ============================================================ */
 
+/* ── Syne descender fix — override Google Fonts @font-face with
+      descent-override to prevent clipping of g, y, p, q ────────── */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/syne/v24/8vIS7w4qzmVxsWxjBZRjr0FKM_3mvj6k.ttf) format('truetype');
+  descent-override: 40%;
+}
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/syne/v24/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvj6k.ttf) format('truetype');
+  descent-override: 40%;
+}
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/syne/v24/8vIS7w4qzmVxsWxjBZRjr0FKM_24vj6k.ttf) format('truetype');
+  descent-override: 40%;
+}
+
 /* ── Custom Properties ─────────────────────────────────────── */
 
 :root {
@@ -159,31 +186,26 @@ h1, h2, h3 {
   font-family: var(--font-heading);
   color: var(--text-primary);
   overflow: visible;
-  -webkit-clip-path: none;
-  clip-path: none;
 }
 
 h1 {
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.6;
+  line-height: 1.4;
   letter-spacing: -0.02em;
-  padding-bottom: 0.25em;
 }
 
 h2 {
   font-weight: 600;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.6;
+  line-height: 1.4;
   letter-spacing: -0.01em;
-  padding-bottom: 0.25em;
 }
 
 h3 {
   font-weight: 600;
   font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-  line-height: 1.6;
-  padding-bottom: 0.2em;
+  line-height: 1.4;
 }
 
 h4 {
@@ -564,7 +586,6 @@ p {
 
 .section__title {
   margin-bottom: var(--space-4);
-  overflow: visible !important;
 }
 
 .section__subtitle {
@@ -680,13 +701,11 @@ p {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--text-primary);
   margin-bottom: var(--space-4);
   letter-spacing: 0.02em;
   text-shadow: 0 0 40px rgba(59,130,246,0.3);
-  overflow: visible;
-  padding-bottom: 0.25em;
 }
 
 .hero__subtitle {
@@ -950,10 +969,8 @@ p {
 
 /* Station title area */
 .station__title {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
   position: relative;
-  overflow: visible !important;
-  clip-path: none !important;
 }
 
 .station__title-bar {
