@@ -6223,95 +6223,6 @@ body::after {
   text-align: center;
   font-style: italic;
 }
-/* ── CTA / Next Steps ──────────────────────────────────────── */
-.section--cta {
-  background: #0d1117;
-  background-image: radial-gradient(ellipse at 50% 60%, rgba(245,158,11,0.03) 0%, transparent 60%);
-  padding: 120px 0;
-  text-align: center;
-}
-.cta__title {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: var(--space-5);
-}
-.cta__body {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto var(--space-5);
-  line-height: 1.7;
-}
-.cta__ready {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: var(--space-7);
-}
-@keyframes ctaGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(245,158,11,0.2), 0 0 60px rgba(245,158,11,0.05); }
-  50% { box-shadow: 0 0 40px rgba(245,158,11,0.3), 0 0 80px rgba(245,158,11,0.08); }
-}
-.cta__btn {
-  display: inline-block;
-  padding: 18px 48px;
-  background: #f59e0b;
-  color: #0a0f1e;
-  font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  text-decoration: none;
-  animation: ctaGlow 3s ease-in-out infinite;
-  transition: transform 0.2s var(--ease-out), filter 0.2s var(--ease-out);
-  margin-bottom: var(--space-7);
-}
-.cta__btn:hover {
-  transform: scale(1.03);
-  filter: brightness(1.1);
-  box-shadow: 0 0 50px rgba(245,158,11,0.35), 0 0 100px rgba(245,158,11,0.1);
-}
-.cta__btn:active {
-  transform: scale(0.98);
-}
-.cta__closing {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-style: italic;
-  font-weight: 300;
-  color: #94a3b8;
-  max-width: 500px;
-  margin: 0 auto var(--space-8);
-  line-height: 1.6;
-}
-.cta__confidence {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-7);
-  flex-wrap: wrap;
-}
-.cta__confidence-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--text-tertiary);
-}
-.cta__confidence-item i,
-.cta__confidence-item svg {
-  width: 16px;
-  height: 16px;
-  color: var(--text-secondary);
-  stroke: var(--text-secondary);
-}
-
 /* ============================================================
    RESPONSIVE — INVESTMENT & CTA SECTIONS
    ============================================================ */
@@ -6399,26 +6310,6 @@ body::after {
   }
   .tco__row {
     font-size: 0.8rem;
-  }
-
-  /* CTA: full width button */
-  .section--cta {
-    padding: 80px 0;
-  }
-  .cta__btn {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: var(--space-7);
-    padding: 16px 32px;
-    font-size: 1rem;
-  }
-  .cta__confidence {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-3);
   }
 
   /* Support compare cards */
@@ -6537,10 +6428,6 @@ body::after {
   <a href="#invest-summary" class="side-nav__item" data-nav="invest-summary" style="--dot-color: var(--accent-gold)">
     <span class="side-nav__circle"></span>
     <span class="side-nav__label">Summary</span>
-  </a>
-  <a href="#cta" class="side-nav__item" data-nav="cta" style="--dot-color: var(--accent-gold)">
-    <span class="side-nav__circle"></span>
-    <span class="side-nav__label">Next Steps</span>
   </a>
   <a href="#mandate" class="side-nav__item" data-nav="mandate" style="--dot-color: var(--accent-blue-light)">
     <span class="side-nav__circle"></span>
@@ -9113,7 +9000,7 @@ body::after {
 
     <!-- Investment table -->
     <div class="invest-table-wrap">
-    <table class="invest-table" data-animate data-delay="1">
+    <table class="invest-table">
       <thead>
         <tr>
           <th>Phase</th>
@@ -9198,33 +9085,6 @@ body::after {
 </section>
 
 <!-- ============================== -->
-<!-- CTA / NEXT STEPS -->
-<!-- ============================== -->
-<section id="cta" class="section section--cta">
-  <div class="section__inner">
-    <h2 class="cta__title" data-animate>Let's Build This</h2>
-    <p class="cta__body" data-animate data-delay="1">The recommended first step is a 30-minute alignment call to finalize Phase 1 scope, confirm your AWS environment, and set the development timeline.</p>
-    <p class="cta__ready" data-animate data-delay="2">We're ready to begin immediately.</p>
-    <a href="#" class="cta__btn" data-animate data-delay="3">Schedule a Call</a>
-    <p class="cta__closing" data-animate data-delay="4">5,000 homes per month requires a platform that thinks. Let's build it.</p>
-    <div class="cta__confidence" data-animate data-delay="5">
-      <div class="cta__confidence-item">
-        <i data-lucide="shield-check"></i>
-        <span>Fixed-Price Phases</span>
-      </div>
-      <div class="cta__confidence-item">
-        <i data-lucide="check-circle"></i>
-        <span>Phase 1 Proves the Value</span>
-      </div>
-      <div class="cta__confidence-item">
-        <i data-lucide="clock"></i>
-        <span>15 Weeks to Full Platform</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== -->
 <!-- FOOTER -->
 <!-- ============================== -->
 <footer id="footer" class="footer">
@@ -9303,7 +9163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'flow-summary', 'timeline',
     'build-hire', 'phases', 'gantt-timeline',
     'roi-calc', 'platform-support', 'invest-summary',
-    'cta', 'mandate'
+    'mandate'
   ];
 
   // Map: section ID → { element, navItem, index }
@@ -9956,41 +9816,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from(tcoSummary, {
           scrollTrigger: { trigger: tcoSummary, start: 'top 85%' },
           y: 30, opacity: 0, duration: 0.6, ease: 'power2.out',
-          immediateRender: false,
-        });
-      }
-
-      // ── CTA / Next Steps entrance ──
-      const ctaSection = document.querySelector('.section--cta');
-      if (ctaSection) {
-        gsap.from('.cta__title', {
-          scrollTrigger: { trigger: ctaSection, start: 'top 75%' },
-          scale: 0.9, opacity: 0, duration: 0.7, ease: 'power2.out',
-          immediateRender: false,
-        });
-        gsap.from('.cta__body', {
-          scrollTrigger: { trigger: ctaSection, start: 'top 75%' },
-          y: 20, opacity: 0, duration: 0.5, delay: 0.15, ease: 'power2.out',
-          immediateRender: false,
-        });
-        gsap.from('.cta__ready', {
-          scrollTrigger: { trigger: ctaSection, start: 'top 75%' },
-          y: 15, opacity: 0, duration: 0.5, delay: 0.3, ease: 'power2.out',
-          immediateRender: false,
-        });
-        gsap.from('.cta__btn', {
-          scrollTrigger: { trigger: ctaSection, start: 'top 75%' },
-          y: 20, opacity: 0, duration: 0.6, delay: 0.5, ease: 'power2.out',
-          immediateRender: false,
-        });
-        gsap.from('.cta__closing', {
-          scrollTrigger: { trigger: ctaSection, start: 'top 75%' },
-          y: 10, opacity: 0, duration: 0.5, delay: 0.65, ease: 'power2.out',
-          immediateRender: false,
-        });
-        gsap.from('.cta__confidence', {
-          scrollTrigger: { trigger: ctaSection, start: 'top 75%' },
-          y: 10, opacity: 0, duration: 0.5, delay: 0.8, ease: 'power2.out',
           immediateRender: false,
         });
       }
