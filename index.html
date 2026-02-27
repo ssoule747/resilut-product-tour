@@ -13,7 +13,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- GSAP + Plugins -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -4883,6 +4883,659 @@ body::after {
 .station__module-tag:hover {
   color: var(--text-secondary);
 }
+
+/* ============================================================
+   INVESTMENT & PRICING SECTION
+   ============================================================ */
+
+/* ── Sub-Section 1: Build Intro ────────────────────────────── */
+.section--invest-intro {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #0d1117;
+  background-image:
+    radial-gradient(ellipse at 50% 40%, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(37, 99, 235, 0.03) 0%, transparent 50%);
+}
+
+.invest-intro__title {
+  font-family: 'Space Grotesk', var(--font-heading), sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: var(--space-4);
+}
+
+.invest-intro__subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: #94a3b8;
+  margin-bottom: var(--space-7);
+}
+
+.invest-intro__divider {
+  width: 200px;
+  height: 2px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+  border-radius: 1px;
+}
+
+/* ── Sub-Section 2: Build vs Hire ──────────────────────────── */
+.section--build-hire {
+  background: #0d1117;
+  padding: var(--space-9) 0 var(--space-8);
+}
+
+.build-hire__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  line-height: 1.4;
+}
+
+.build-hire__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 868px) {
+  .build-hire__grid { grid-template-columns: 1fr; }
+}
+
+/* Comparison cards */
+.compare-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.compare-card:hover {
+  transform: translateY(-4px);
+}
+
+.compare-card--hire {
+  border-top: 3px solid rgba(239, 68, 68, 0.4);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.03) 0%, var(--bg-surface) 15%);
+}
+
+.compare-card--hire:hover {
+  box-shadow: 0 12px 40px rgba(239, 68, 68, 0.08);
+}
+
+.compare-card--us {
+  border-top: 3px solid rgba(16, 185, 129, 0.4);
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.03) 0%, var(--bg-surface) 15%);
+}
+
+.compare-card--us:hover {
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.08);
+}
+
+.compare-card__header {
+  padding: var(--space-5) var(--space-6) var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.compare-card__badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.compare-card--hire .compare-card__badge {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.compare-card--us .compare-card__badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.compare-card__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.compare-card__body {
+  padding: var(--space-3) var(--space-6) var(--space-6);
+}
+
+/* Mini hire table */
+.hire-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-5);
+  font-size: 0.78rem;
+}
+
+.hire-table th {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+  padding: var(--space-2) 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.hire-table th:last-child { text-align: right; }
+
+.hire-table td {
+  padding: var(--space-2) 0;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hire-table td:last-child {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+.hire-table tr.hire-table__total td {
+  border-bottom: none;
+  font-weight: 700;
+  color: #f87171;
+  padding-top: var(--space-3);
+}
+
+/* Hidden costs list */
+.compare-card__costs {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.compare-card__costs li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.cost-icon--bad {
+  color: #f87171;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 1px;
+}
+
+.cost-icon--good {
+  color: #34d399;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-top: 1px;
+}
+
+/* Bottom stat */
+.compare-card__stat {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.compare-card--hire .compare-card__stat {
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.12);
+}
+
+.compare-card--us .compare-card__stat {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+}
+
+.compare-card__stat-amount {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  line-height: 1.4;
+}
+
+.compare-card--hire .compare-card__stat-amount { color: #f87171; }
+.compare-card--us .compare-card__stat-amount { color: #34d399; }
+
+.compare-card__stat-timeline {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+}
+
+/* Bottom line callout */
+.build-hire__bottom {
+  max-width: 1100px;
+  margin: var(--space-6) auto 0;
+  padding: var(--space-5) var(--space-6);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius-lg);
+}
+
+.build-hire__bottom p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.build-hire__bottom .hl-gold {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* ── Sub-Section 3: Three Phases ───────────────────────────── */
+.section--phases {
+  background: #0d1117;
+  padding: var(--space-9) 0;
+}
+
+.phases__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  line-height: 1.4;
+}
+
+.phases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .phases__grid { grid-template-columns: 1fr; max-width: 600px; }
+}
+
+.phase-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.phase-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--phase-color);
+}
+
+.phase-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--phase-color) 30%, var(--border));
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--phase-color) 10%, transparent);
+}
+
+.phase-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.phase-card__badge {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--phase-color) 15%, transparent);
+  color: var(--phase-color);
+  border: 1px solid color-mix(in srgb, var(--phase-color) 25%, transparent);
+}
+
+.phase-card__weeks {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.06em;
+}
+
+.phase-card__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+  line-height: 1.4;
+}
+
+.phase-card__stations {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--phase-color);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-3);
+  opacity: 0.8;
+}
+
+.phase-card__quote {
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-5);
+  line-height: 1.5;
+  padding-left: var(--space-3);
+  border-left: 2px solid color-mix(in srgb, var(--phase-color) 30%, transparent);
+}
+
+.phase-card__section-title {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-3);
+}
+
+.phase-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  flex: 1;
+}
+
+.phase-card__item {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.phase-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--phase-color);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.phase-card__item-title {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.phase-card__item-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.phase-card__invest {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background: color-mix(in srgb, var(--phase-color) 5%, var(--bg-primary));
+  border: 1px solid color-mix(in srgb, var(--phase-color) 15%, transparent);
+  margin-top: auto;
+}
+
+.phase-card__amount {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
+  color: #f59e0b;
+  line-height: 1.3;
+}
+
+.phase-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.06em;
+  margin-top: var(--space-1);
+}
+
+/* ── Sub-Section 4: Gantt Timeline ─────────────────────────── */
+.section--gantt {
+  background: #0d1117;
+  padding: var(--space-8) 0 var(--space-9);
+}
+
+.gantt__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-8);
+  line-height: 1.4;
+}
+
+.gantt {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Week header row */
+.gantt__weeks {
+  display: grid;
+  grid-template-columns: 100px repeat(15, 1fr);
+  gap: 0;
+  margin-bottom: var(--space-3);
+}
+
+.gantt__week-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.gantt__week-label:first-child {
+  text-align: left;
+}
+
+/* Phase bars */
+.gantt__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.gantt__row {
+  display: grid;
+  grid-template-columns: 100px repeat(15, 1fr);
+  align-items: center;
+  gap: 0;
+  height: 40px;
+}
+
+.gantt__row-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.gantt__bar-wrapper {
+  position: relative;
+  height: 32px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.gantt__bar {
+  height: 100%;
+  border-radius: var(--radius-md);
+  position: relative;
+  transform-origin: left center;
+  transform: scaleX(0);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-3);
+}
+
+.gantt__bar--p1 { background: linear-gradient(90deg, #3b82f6, #60a5fa); grid-column: 2 / 9; }
+.gantt__bar--p2 { background: linear-gradient(90deg, #06b6d4, #22d3ee); grid-column: 7 / 13; }
+.gantt__bar--p3 { background: linear-gradient(90deg, #10b981, #34d399); grid-column: 11 / 17; }
+
+.gantt__bar-text {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+/* Milestones */
+.gantt__milestones {
+  display: grid;
+  grid-template-columns: 100px repeat(15, 1fr);
+  margin-top: var(--space-5);
+  position: relative;
+  min-height: 60px;
+}
+
+.gantt__milestone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  transform: scale(0);
+}
+
+.gantt__diamond {
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.gantt__diamond--blue { background: #3b82f6; box-shadow: 0 0 8px rgba(59,130,246,0.4); }
+.gantt__diamond--teal { background: #06b6d4; box-shadow: 0 0 8px rgba(6,182,212,0.4); }
+.gantt__diamond--green { background: #10b981; box-shadow: 0 0 8px rgba(16,185,129,0.4); }
+.gantt__diamond--gold { background: #f59e0b; box-shadow: 0 0 12px rgba(245,158,11,0.5); width: 14px; height: 14px; }
+
+.gantt__milestone-label {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-tertiary);
+  text-align: center;
+  max-width: 90px;
+  line-height: 1.3;
+}
+
+.gantt__milestone--gold .gantt__milestone-label {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.gantt__overlap-note {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+/* ── Gantt mobile: vertical ────────────────────────────────── */
+@media (max-width: 768px) {
+  .gantt__weeks { display: none; }
+
+  .gantt__rows {
+    gap: var(--space-4);
+  }
+
+  .gantt__row {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: var(--space-2);
+  }
+
+  .gantt__row-label {
+    text-align: left;
+  }
+
+  .gantt__bar-wrapper {
+    width: 100%;
+  }
+
+  .gantt__bar--p1, .gantt__bar--p2, .gantt__bar--p3 {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .gantt__milestones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .gantt__milestone {
+    flex-direction: row;
+    gap: var(--space-3);
+  }
+
+  .gantt__milestone-label {
+    text-align: left;
+    max-width: none;
+  }
+}
+
+/* ── Count-up animation utility ────────────────────────────── */
+.count-up {
+  font-variant-numeric: tabular-nums;
+}
   </style>
 </head>
 <body>
@@ -4970,6 +5623,18 @@ body::after {
   <a href="#timeline" class="side-nav__item" data-nav="timeline" style="--dot-color: var(--accent-gold)">
     <span class="side-nav__circle"></span>
     <span class="side-nav__label">Delivery Order</span>
+  </a>
+  <a href="#build-hire" class="side-nav__item" data-nav="build-hire" style="--dot-color: var(--accent-gold)">
+    <span class="side-nav__circle"></span>
+    <span class="side-nav__label">Investment</span>
+  </a>
+  <a href="#phases" class="side-nav__item" data-nav="phases" style="--dot-color: var(--accent-gold)">
+    <span class="side-nav__circle"></span>
+    <span class="side-nav__label">Phases</span>
+  </a>
+  <a href="#gantt-timeline" class="side-nav__item" data-nav="gantt-timeline" style="--dot-color: var(--accent-gold)">
+    <span class="side-nav__circle"></span>
+    <span class="side-nav__label">Timeline</span>
   </a>
   <a href="#mandate" class="side-nav__item" data-nav="mandate" style="--dot-color: var(--accent-blue-light)">
     <span class="side-nav__circle"></span>
@@ -7077,6 +7742,298 @@ body::after {
 </section>
 
 <!-- ============================== -->
+<!-- INVESTMENT & PRICING — Intro -->
+<!-- ============================== -->
+<section id="invest-intro" class="section section--auto section--invest-intro">
+  <div class="section__inner" style="text-align: center;">
+    <h1 class="invest-intro__title" data-animate>Here&rsquo;s How We Build It For You</h1>
+    <p class="invest-intro__subtitle" data-animate data-delay="1">Three phases. Fifteen weeks. Every station AI-powered.</p>
+    <div class="invest-intro__divider" data-animate data-delay="2"></div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- INVESTMENT — Build vs Hire -->
+<!-- ============================== -->
+<section id="build-hire" class="section section--auto section--build-hire">
+  <div class="section__inner">
+    <h2 class="build-hire__title" data-animate>Two Paths to the Same Platform</h2>
+
+    <div class="build-hire__grid">
+      <!-- LEFT: Hire an In-House Team -->
+      <div class="compare-card compare-card--hire" data-animate="fade-right">
+        <div class="compare-card__header">
+          <span class="compare-card__badge">Option A</span>
+          <span class="compare-card__name">Hire an In-House Team</span>
+        </div>
+        <div class="compare-card__body">
+          <table class="hire-table">
+            <thead>
+              <tr><th>Role</th><th>Location</th><th>Monthly</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sr. AI/ML Engineer</td><td>India / Remote</td><td>$3,500–$5,000</td></tr>
+              <tr><td>AI Developer #2</td><td>India / Remote</td><td>$2,000–$3,500</td></tr>
+              <tr><td>Backend/Cloud Eng.</td><td>India / Remote</td><td>$2,500–$4,000</td></tr>
+              <tr><td>Project Manager</td><td>India / Remote</td><td>$1,500–$2,500</td></tr>
+              <tr class="hire-table__total"><td><strong>Total Team</strong></td><td></td><td><strong>$9,500–$15,000/mo</strong></td></tr>
+            </tbody>
+          </table>
+
+          <ul class="compare-card__costs">
+            <li><span class="cost-icon--bad">✕</span> 2–3 months recruiting before any code is written</li>
+            <li><span class="cost-icon--bad">✕</span> 1–2 months onboarding and architecture planning</li>
+            <li><span class="cost-icon--bad">✕</span> Managing 4 people across time zones</li>
+            <li><span class="cost-icon--bad">✕</span> If your lead engineer quits at month 5, you start over</li>
+            <li><span class="cost-icon--bad">✕</span> 12–18 months to full platform delivery</li>
+            <li><span class="cost-icon--bad">✕</span> Annual cost: $114,000–$180,000 in salary alone</li>
+          </ul>
+
+          <div class="compare-card__stat">
+            <div class="compare-card__stat-amount">Realistic all-in: $150,000–$220,000+</div>
+            <div class="compare-card__stat-timeline">Timeline: 12–18 months</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Us -->
+      <div class="compare-card compare-card--us" data-animate="fade-left">
+        <div class="compare-card__header">
+          <span class="compare-card__badge">Option B</span>
+          <span class="compare-card__name">Us</span>
+        </div>
+        <div class="compare-card__body">
+          <ul class="compare-card__costs">
+            <li><span class="cost-icon--good">✓</span> Pre-built team &mdash; no recruiting, no onboarding</li>
+            <li><span class="cost-icon--good">✓</span> Architecture already designed &mdash; every module mapped</li>
+            <li><span class="cost-icon--good">✓</span> Building starts Week 1, not Month 3</li>
+            <li><span class="cost-icon--good">✓</span> 15 weeks to full platform, not 12–18 months</li>
+            <li><span class="cost-icon--good">✓</span> Fixed-price phases &mdash; you know exactly what you pay</li>
+            <li><span class="cost-icon--good">✓</span> One point of contact, not four direct reports</li>
+            <li><span class="cost-icon--good">✓</span> If someone on our team leaves &mdash; our problem, not yours</li>
+          </ul>
+
+          <div class="compare-card__stat">
+            <div class="compare-card__stat-amount">Investment: $<span class="count-up" data-target="195000">0</span> fixed</div>
+            <div class="compare-card__stat-timeline">Timeline: ~15 weeks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom line callout -->
+    <div class="build-hire__bottom" data-animate data-delay="2">
+      <p>Same result. <span class="hl-gold">3&times; faster</span>. Defined deliverables. Zero management overhead. If Phase 1 doesn&rsquo;t meet expectations, you stop &mdash; you&rsquo;ve spent <span class="hl-gold">$85K</span>, not six months of payroll you can&rsquo;t unwind.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- INVESTMENT — Three Phases -->
+<!-- ============================== -->
+<section id="phases" class="section section--auto section--phases">
+  <div class="section__inner">
+    <h2 class="phases__title" data-animate>Three Phases. Standalone Value at Every Step.</h2>
+
+    <div class="phases__grid">
+
+      <!-- Phase 1 -->
+      <div class="phase-card" style="--phase-color: #3b82f6;" data-animate data-delay="0">
+        <div class="phase-card__top">
+          <span class="phase-card__badge">Phase 1</span>
+          <span class="phase-card__weeks">Weeks 1–7</span>
+        </div>
+        <div class="phase-card__title">AI Foundation + Core Pipeline</div>
+        <div class="phase-card__stations">Stations 1–3</div>
+        <div class="phase-card__quote">&ldquo;Build the brain. Eliminate the bottleneck.&rdquo;</div>
+        <div class="phase-card__section-title">What Gets Built</div>
+        <div class="phase-card__items">
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">AI Infrastructure</div>
+              <div class="phase-card__item-desc">RAG engine, Bedrock integration, prompt management, feedback loops, cost monitoring</div>
+            </div>
+          </div>
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">Inspection Intelligence</div>
+              <div class="phase-card__item-desc">PDF/photo parsing, defect extraction and classification, structured defect ledger, photo tagging</div>
+            </div>
+          </div>
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">Renovation Scoping</div>
+              <div class="phase-card__item-desc">Defect-to-line-item mapping, RSMeans integration, contractor-ready SOW generation, change order analysis</div>
+            </div>
+          </div>
+        </div>
+        <div class="phase-card__invest">
+          <div class="phase-card__amount">$<span class="count-up" data-target="85000">0</span></div>
+          <div class="phase-card__tag">Solves your #1 bottleneck</div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase-card" style="--phase-color: #06b6d4;" data-animate data-delay="1">
+        <div class="phase-card__top">
+          <span class="phase-card__badge">Phase 2</span>
+          <span class="phase-card__weeks">Weeks 6–11</span>
+        </div>
+        <div class="phase-card__title">Deal Intelligence</div>
+        <div class="phase-card__stations">Stations 4–6</div>
+        <div class="phase-card__quote">&ldquo;Automate the front door through the decision point.&rdquo;</div>
+        <div class="phase-card__section-title">What Gets Built</div>
+        <div class="phase-card__items">
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">Wholesaler Deal Intake</div>
+              <div class="phase-card__item-desc">Submission portal, AI normalization, data gap detection, wholesaler reliability scoring</div>
+            </div>
+          </div>
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">Underwriting Engine</div>
+              <div class="phase-card__item-desc">Multi-source validation, confidence scoring, plain-English sensitivity analysis, deal scoring</div>
+            </div>
+          </div>
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">KPI Dashboard</div>
+              <div class="phase-card__item-desc">Portfolio analytics, AI-generated insights, predictive metrics, pipeline visualization</div>
+            </div>
+          </div>
+        </div>
+        <div class="phase-card__invest">
+          <div class="phase-card__amount">$<span class="count-up" data-target="65000">0</span></div>
+          <div class="phase-card__tag">Complete acquisition pipeline</div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase-card" style="--phase-color: #10b981;" data-animate data-delay="2">
+        <div class="phase-card__top">
+          <span class="phase-card__badge">Phase 3</span>
+          <span class="phase-card__weeks">Weeks 10–15</span>
+        </div>
+        <div class="phase-card__title">Operations &amp; Scale</div>
+        <div class="phase-card__stations">Stations 7–10</div>
+        <div class="phase-card__quote">&ldquo;Everything needed to manage 5,000+ homes without scaling headcount.&rdquo;</div>
+        <div class="phase-card__section-title">What Gets Built</div>
+        <div class="phase-card__items">
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">Refinance Intelligence</div>
+              <div class="phase-card__item-desc">Refi-readiness monitoring, lender package assembly, term sheet comparison</div>
+            </div>
+          </div>
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">AI Copilot + PM</div>
+              <div class="phase-card__item-desc">Template library, platform-connected chat, maintenance triage, rent optimization</div>
+            </div>
+          </div>
+          <div class="phase-card__item">
+            <div class="phase-card__dot"></div>
+            <div>
+              <div class="phase-card__item-title">D2S Marketing</div>
+              <div class="phase-card__item-desc">Personalized outreach generation, lead scoring, auto-qualification</div>
+            </div>
+          </div>
+        </div>
+        <div class="phase-card__invest">
+          <div class="phase-card__amount">$<span class="count-up" data-target="45000">0</span></div>
+          <div class="phase-card__tag">Full platform operational</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- INVESTMENT — Gantt Timeline -->
+<!-- ============================== -->
+<section id="gantt-timeline" class="section section--auto section--gantt">
+  <div class="section__inner">
+    <h2 class="gantt__title" data-animate>The Journey &mdash; 15 Weeks to Full Platform</h2>
+
+    <div class="gantt" data-animate data-delay="1">
+      <!-- Week labels -->
+      <div class="gantt__weeks">
+        <div class="gantt__week-label"></div>
+        <div class="gantt__week-label">1</div>
+        <div class="gantt__week-label">2</div>
+        <div class="gantt__week-label">3</div>
+        <div class="gantt__week-label">4</div>
+        <div class="gantt__week-label">5</div>
+        <div class="gantt__week-label">6</div>
+        <div class="gantt__week-label">7</div>
+        <div class="gantt__week-label">8</div>
+        <div class="gantt__week-label">9</div>
+        <div class="gantt__week-label">10</div>
+        <div class="gantt__week-label">11</div>
+        <div class="gantt__week-label">12</div>
+        <div class="gantt__week-label">13</div>
+        <div class="gantt__week-label">14</div>
+        <div class="gantt__week-label">15</div>
+      </div>
+
+      <!-- Phase bars -->
+      <div class="gantt__rows">
+        <div class="gantt__row">
+          <div class="gantt__row-label">Phase 1</div>
+          <div class="gantt__bar gantt__bar--p1">
+            <span class="gantt__bar-text">AI Foundation + Core</span>
+          </div>
+        </div>
+        <div class="gantt__row">
+          <div class="gantt__row-label">Phase 2</div>
+          <div class="gantt__bar gantt__bar--p2">
+            <span class="gantt__bar-text">Deal Intelligence</span>
+          </div>
+        </div>
+        <div class="gantt__row">
+          <div class="gantt__row-label">Phase 3</div>
+          <div class="gantt__bar gantt__bar--p3">
+            <span class="gantt__bar-text">Operations &amp; Scale</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestones -->
+      <div class="gantt__milestones">
+        <div class="gantt__milestone" style="grid-column: 5;">
+          <div class="gantt__diamond gantt__diamond--blue"></div>
+          <div class="gantt__milestone-label">AI infrastructure live</div>
+        </div>
+        <div class="gantt__milestone" style="grid-column: 9;">
+          <div class="gantt__diamond gantt__diamond--blue"></div>
+          <div class="gantt__milestone-label">Scoping bottleneck eliminated</div>
+        </div>
+        <div class="gantt__milestone" style="grid-column: 13;">
+          <div class="gantt__diamond gantt__diamond--teal"></div>
+          <div class="gantt__milestone-label">Acquisition pipeline automated</div>
+        </div>
+        <div class="gantt__milestone gantt__milestone--gold" style="grid-column: 17;">
+          <div class="gantt__diamond gantt__diamond--gold"></div>
+          <div class="gantt__milestone-label">Full platform deployed</div>
+        </div>
+      </div>
+
+      <p class="gantt__overlap-note">Phases overlap &mdash; we ramp the team across workstreams for maximum velocity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
 <!-- FOOTER -->
 <!-- ============================== -->
 <footer id="footer" class="footer">
@@ -7152,7 +8109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'hero', 'overview', 'automation-hierarchy', 'tech-stack',
     'station-1', 'station-2', 'station-3', 'station-4', 'station-5',
     'station-6', 'station-7', 'station-8', 'station-9', 'station-10',
-    'flow-summary', 'timeline', 'mandate'
+    'flow-summary', 'timeline', 'mandate',
+    'build-hire', 'phases', 'gantt-timeline'
   ];
 
   // Map: section ID → { element, navItem, index }
@@ -7668,6 +8626,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
+      // ── Investment section animations ──
+
+      // Invest intro title — scale-up entrance
+      const investTitle = document.querySelector('.invest-intro__title');
+      if (investTitle) {
+        gsap.from(investTitle, {
+          scrollTrigger: { trigger: investTitle, start: 'top 80%' },
+          scale: 0.9, opacity: 0, duration: 0.7, ease: 'power2.out',
+          immediateRender: false,
+        });
+      }
+
+      // Build vs Hire cards — left slides right, right slides left
+      const hireCard = document.querySelector('.compare-card--hire');
+      const usCard = document.querySelector('.compare-card--us');
+      if (hireCard) {
+        gsap.from(hireCard, {
+          scrollTrigger: { trigger: '.build-hire__grid', start: 'top 75%' },
+          x: -60, opacity: 0, duration: 0.7, ease: 'power2.out',
+          immediateRender: false,
+        });
+      }
+      if (usCard) {
+        gsap.from(usCard, {
+          scrollTrigger: { trigger: '.build-hire__grid', start: 'top 75%' },
+          x: 60, opacity: 0, duration: 0.7, ease: 'power2.out', delay: 0.15,
+          immediateRender: false,
+        });
+      }
+
+      // Phase cards stagger
+      const phaseCards = document.querySelectorAll('.phase-card');
+      if (phaseCards.length) {
+        gsap.from(phaseCards, {
+          scrollTrigger: { trigger: '.phases__grid', start: 'top 75%' },
+          y: 40, opacity: 0, stagger: 0.15, duration: 0.6, ease: 'power2.out',
+          immediateRender: false,
+        });
+      }
+
+      // Gantt bars — grow from left sequentially
+      const ganttBars = document.querySelectorAll('.gantt__bar');
+      if (ganttBars.length) {
+        ganttBars.forEach((bar, i) => {
+          gsap.to(bar, {
+            scrollTrigger: { trigger: '.gantt__rows', start: 'top 80%' },
+            scaleX: 1, duration: 1, delay: i * 0.3, ease: 'power2.out',
+          });
+        });
+      }
+
+      // Gantt milestones — pop in with bounce
+      const ganttMilestones = document.querySelectorAll('.gantt__milestone');
+      if (ganttMilestones.length) {
+        ganttMilestones.forEach((m, i) => {
+          gsap.to(m, {
+            scrollTrigger: { trigger: '.gantt__milestones', start: 'top 85%' },
+            scale: 1, duration: 0.4, delay: 0.3 + i * 0.25, ease: 'back.out(1.5)',
+          });
+        });
+      }
+
       // ── Footer animations ──
       const footer = document.querySelector('.footer');
       if (footer) {
@@ -7691,6 +8711,41 @@ document.addEventListener('DOMContentLoaded', () => {
     } // end ScrollTrigger block
 
   } // end GSAP block
+
+  // ────────────────────────────────────────────────────────────────
+  // COUNT-UP ANIMATION — dollar amounts animate from 0 on scroll
+  // ────────────────────────────────────────────────────────────────
+  const countUpElements = document.querySelectorAll('.count-up[data-target]');
+  if (countUpElements.length) {
+    const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+    const animateCount = (el) => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 1200;
+      const start = performance.now();
+
+      const tick = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.round(easeOutQuart(progress) * target);
+        el.textContent = value.toLocaleString('en-US');
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+
+      requestAnimationFrame(tick);
+    };
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    countUpElements.forEach((el) => countObserver.observe(el));
+  }
 
   // ────────────────────────────────────────────────────────────────
   // 10. PIPELINE CONNECTOR ANIMATION (SVG dash initialisation)
