@@ -3392,189 +3392,6 @@ p {
   font-family: serif;
 }
 
-/* ── Scale Context Section ─────────────────────────────────── */
-
-.scale-chart {
-  max-width: 820px;
-  margin: var(--space-7) auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.scale-bar {
-  display: grid;
-  grid-template-columns: 200px 1fr 80px;
-  align-items: center;
-  gap: var(--space-4);
-}
-
-.scale-bar__name {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-align: right;
-  white-space: nowrap;
-}
-
-.scale-bar__track {
-  height: 32px;
-  border-radius: var(--radius-md);
-  background: var(--bg-surface);
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--border-subtle);
-}
-
-.scale-bar__fill {
-  height: 100%;
-  border-radius: var(--radius-md);
-  background: var(--bg-elevated);
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.scale-bar__value {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--text-tertiary);
-  white-space: nowrap;
-}
-
-/* Resilut highlight bar */
-.scale-bar--resilut .scale-bar__name {
-  font-weight: 700;
-  color: var(--accent-blue-light);
-}
-
-.scale-bar--resilut .scale-bar__track {
-  border-color: color-mix(in srgb, var(--accent-blue) 30%, transparent);
-}
-
-.scale-bar--resilut .scale-bar__fill {
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-blue-light));
-  box-shadow: 0 0 20px var(--accent-blue-glow), 0 0 40px color-mix(in srgb, var(--accent-blue) 15%, transparent);
-}
-
-.scale-bar--resilut .scale-bar__fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 4px;
-  height: 100%;
-  background: #fff;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  opacity: 0.4;
-  box-shadow: 0 0 12px var(--accent-blue-light);
-}
-
-.scale-bar--resilut .scale-bar__value {
-  font-weight: 700;
-  color: var(--accent-blue-light);
-}
-
-/* Year context tag */
-.scale-bar__tag {
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.06em;
-  color: var(--text-tertiary);
-  margin-top: 2px;
-}
-
-.scale-bar--resilut .scale-bar__tag {
-  color: var(--accent-blue);
-}
-
-/* Stat cards row */
-.scale-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
-  max-width: 820px;
-  margin: var(--space-8) auto 0;
-}
-
-.scale-stat {
-  text-align: center;
-  padding: var(--space-6) var(--space-4);
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  transition: all 0.35s var(--ease-out);
-  position: relative;
-  overflow: hidden;
-}
-
-.scale-stat::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-  opacity: 0.5;
-}
-
-.scale-stat:hover {
-  border-color: color-mix(in srgb, var(--accent-blue) 45%, transparent);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px color-mix(in srgb, var(--accent-blue) 25%, transparent);
-}
-
-.scale-stat__number {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 2.8rem);
-  color: var(--text-primary);
-  line-height: 1.1;
-  margin-bottom: var(--space-2);
-}
-
-.scale-stat__label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-}
-
-/* Autonomy callout */
-.scale-callout {
-  max-width: 740px;
-  margin: var(--space-7) auto 0;
-  padding: var(--space-5) var(--space-6);
-  border-left: 3px solid var(--accent-blue);
-  background: color-mix(in srgb, var(--accent-blue) 4%, var(--bg-surface));
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  position: relative;
-}
-
-.scale-callout p {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.scale-callout::before {
-  content: '\201C';
-  position: absolute;
-  top: -8px;
-  left: var(--space-4);
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  color: var(--accent-blue);
-  opacity: 0.3;
-  line-height: 1;
-}
-
 /* ── Mandate Section (What We're Building) ─────────────────── */
 
 .mandate-grid {
@@ -4765,45 +4582,6 @@ p {
     font-size: 0.88rem;
   }
 
-  /* Scale section responsive */
-  .scale-bar {
-    grid-template-columns: 120px 1fr 60px;
-    gap: var(--space-2);
-  }
-
-  .scale-bar__name {
-    font-size: 0.72rem;
-  }
-
-  .scale-bar__track {
-    height: 24px;
-  }
-
-  .scale-bar__value {
-    font-size: 0.68rem;
-  }
-
-  .scale-stats {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
-  }
-
-  .scale-stat {
-    padding: var(--space-4) var(--space-3);
-  }
-
-  .scale-stat__number {
-    font-size: 1.8rem;
-  }
-
-  .scale-callout {
-    padding: var(--space-4);
-  }
-
-  .scale-callout p {
-    font-size: 0.9rem;
-  }
-
   /* ── Flow diagram: vertical stack on mobile ── */
   .flow-diagram__main {
     flex-direction: column;
@@ -4928,20 +4706,6 @@ p {
   .side-nav__item.active .side-nav__circle {
     width: 7px;
     height: 7px;
-  }
-
-  /* Scale bars: tighter labels */
-  .scale-bar {
-    grid-template-columns: 90px 1fr 50px;
-    gap: var(--space-1);
-  }
-
-  .scale-bar__name {
-    font-size: 0.65rem;
-  }
-
-  .scale-bar__track {
-    height: 20px;
   }
 
   /* Flow diagram: already vertical from 768, just tighten */
@@ -5158,10 +4922,6 @@ body::after {
   <a href="#overview" class="side-nav__item" data-nav="overview" style="--dot-color: var(--accent-blue)">
     <span class="side-nav__circle"></span>
     <span class="side-nav__label">The Pipeline</span>
-  </a>
-  <a href="#scale" class="side-nav__item" data-nav="scale" style="--dot-color: var(--accent-gold)">
-    <span class="side-nav__circle"></span>
-    <span class="side-nav__label">The Scale</span>
   </a>
   <a href="#automation-hierarchy" class="side-nav__item" data-nav="automation-hierarchy" style="--dot-color: var(--text-secondary)">
     <span class="side-nav__circle"></span>
@@ -5390,108 +5150,6 @@ body::after {
 <!-- ============================== -->
 <!-- SCALE CONTEXT -->
 <!-- ============================== -->
-<section id="scale" class="section section--full">
-  <div class="section__inner">
-    <span class="badge badge--accent" data-animate>MARKET CONTEXT</span>
-    <h1 class="section__title" data-animate data-delay="1">5,000 Homes. Every Month.</h1>
-    <p class="section__subtitle" data-animate data-delay="2">That&rsquo;s 60,000 acquisitions per year &mdash; at a pace that would make this one of the largest SFR operators in the country within 12&nbsp;months.</p>
-
-    <!-- Horizontal bar chart comparison -->
-    <div class="scale-chart" data-animate data-delay="3">
-
-      <div class="scale-bar">
-        <span class="scale-bar__name">Progress Residential</span>
-        <div class="scale-bar__track">
-          <div class="scale-bar__fill" data-scale-width="100"></div>
-        </div>
-        <div>
-          <span class="scale-bar__value">~100,000</span>
-          <div class="scale-bar__tag">10+ years</div>
-        </div>
-      </div>
-
-      <div class="scale-bar">
-        <span class="scale-bar__name">Invitation Homes</span>
-        <div class="scale-bar__track">
-          <div class="scale-bar__fill" data-scale-width="85"></div>
-        </div>
-        <div>
-          <span class="scale-bar__value">~85,000</span>
-          <div class="scale-bar__tag">12+ years</div>
-        </div>
-      </div>
-
-      <div class="scale-bar">
-        <span class="scale-bar__name">American Homes 4 Rent</span>
-        <div class="scale-bar__track">
-          <div class="scale-bar__fill" data-scale-width="60"></div>
-        </div>
-        <div>
-          <span class="scale-bar__value">~60,000</span>
-          <div class="scale-bar__tag">11+ years</div>
-        </div>
-      </div>
-
-      <div class="scale-bar">
-        <span class="scale-bar__name">Amherst Group</span>
-        <div class="scale-bar__track">
-          <div class="scale-bar__fill" data-scale-width="59.4"></div>
-        </div>
-        <div>
-          <span class="scale-bar__value">~59,400</span>
-          <div class="scale-bar__tag">10+ years</div>
-        </div>
-      </div>
-
-      <div class="scale-bar">
-        <span class="scale-bar__name">FirstKey Homes</span>
-        <div class="scale-bar__track">
-          <div class="scale-bar__fill" data-scale-width="52"></div>
-        </div>
-        <div>
-          <span class="scale-bar__value">~52,000</span>
-          <div class="scale-bar__tag">8+ years</div>
-        </div>
-      </div>
-
-      <!-- Resilut — the standout -->
-      <div class="scale-bar scale-bar--resilut">
-        <span class="scale-bar__name">Resilut Target</span>
-        <div class="scale-bar__track">
-          <div class="scale-bar__fill" data-scale-width="60"></div>
-        </div>
-        <div>
-          <span class="scale-bar__value">60,000</span>
-          <div class="scale-bar__tag">Year 1</div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Stat cards row -->
-    <div class="scale-stats">
-      <div class="scale-stat">
-        <div class="scale-stat__number"><span class="counter" data-target="5000">0</span></div>
-        <div class="scale-stat__label">Homes Per Month</div>
-      </div>
-      <div class="scale-stat">
-        <div class="scale-stat__number"><span class="counter" data-target="60000">0</span></div>
-        <div class="scale-stat__label">Annual Acquisition Target</div>
-      </div>
-      <div class="scale-stat">
-        <div class="scale-stat__number">~$10B+</div>
-        <div class="scale-stat__label">Est. Annual Capital Deployment</div>
-      </div>
-    </div>
-
-    <!-- Autonomy callout -->
-    <div class="scale-callout">
-      <p>At this volume, the platform doesn&rsquo;t assist humans &mdash; it replaces the need for them. Every station must run autonomously.</p>
-    </div>
-
-  </div>
-</section>
-
 <!-- ============================== -->
 <!-- AUTOMATION HIERARCHY -->
 <!-- ============================== -->
@@ -7499,7 +7157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Build ordered list of nav sections matching the side nav items
   const navSectionIds = [
-    'hero', 'overview', 'scale', 'automation-hierarchy', 'tech-stack',
+    'hero', 'overview', 'automation-hierarchy', 'tech-stack',
     'station-1', 'station-2', 'station-3', 'station-4', 'station-5',
     'station-6', 'station-7', 'station-8', 'station-9', 'station-10',
     'flow-summary', 'timeline', 'mandate'
@@ -7922,47 +7580,6 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
       });
-
-      // ── Scale chart bar animations ──
-      const scaleBars = document.querySelectorAll('.scale-bar__fill[data-scale-width]');
-      if (scaleBars.length) {
-        scaleBars.forEach((bar, i) => {
-          const targetWidth = bar.getAttribute('data-scale-width');
-          ScrollTrigger.create({
-            trigger: bar.closest('.scale-chart'),
-            start: 'top 75%',
-            once: true,
-            onEnter: () => {
-              gsap.to(bar, {
-                scaleX: targetWidth / 100,
-                duration: 1.2,
-                delay: i * 0.12,
-                ease: 'power2.out',
-              });
-            },
-          });
-        });
-      }
-
-      // Scale stat cards stagger
-      const scaleStats = document.querySelectorAll('.scale-stat');
-      if (scaleStats.length) {
-        gsap.from(scaleStats, {
-          scrollTrigger: { trigger: '.scale-stats', start: 'top 80%' },
-          y: 25, opacity: 0, duration: 0.5, stagger: 0.15, ease: 'power2.out',
-          immediateRender: false,
-        });
-      }
-
-      // Scale callout
-      const scaleCallout = document.querySelector('.scale-callout');
-      if (scaleCallout) {
-        gsap.from(scaleCallout, {
-          scrollTrigger: { trigger: scaleCallout, start: 'top 85%' },
-          x: -20, opacity: 0, duration: 0.6, ease: 'power2.out',
-          immediateRender: false,
-        });
-      }
 
       // ── Flow Diagram animations ──
       const flowDiagram = document.querySelector('.flow-diagram');
