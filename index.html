@@ -155,36 +155,35 @@ ol {
 
 /* ── Typography ────────────────────────────────────────────── */
 
-h1 {
+h1, h2, h3 {
   font-family: var(--font-heading);
+  color: var(--text-primary);
+  overflow: visible;
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+h1 {
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.5;
-  color: var(--text-primary);
+  line-height: 1.6;
   letter-spacing: -0.02em;
-  padding-bottom: 0.15em;
-  overflow: visible;
+  padding-bottom: 0.25em;
 }
 
 h2 {
-  font-family: var(--font-heading);
   font-weight: 600;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1.5;
-  color: var(--text-primary);
+  line-height: 1.6;
   letter-spacing: -0.01em;
-  padding-bottom: 0.15em;
-  overflow: visible;
+  padding-bottom: 0.25em;
 }
 
 h3 {
-  font-family: var(--font-heading);
   font-weight: 600;
   font-size: clamp(1.15rem, 2.5vw, 1.5rem);
-  line-height: 1.5;
-  color: var(--text-primary);
-  padding-bottom: 0.1em;
-  overflow: visible;
+  line-height: 1.6;
+  padding-bottom: 0.2em;
 }
 
 h4 {
@@ -565,6 +564,7 @@ p {
 
 .section__title {
   margin-bottom: var(--space-4);
+  overflow: visible !important;
 }
 
 .section__subtitle {
@@ -680,12 +680,13 @@ p {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: clamp(1.5rem, 3.5vw, 2.25rem);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-primary);
   margin-bottom: var(--space-4);
   letter-spacing: 0.02em;
   text-shadow: 0 0 40px rgba(59,130,246,0.3);
   overflow: visible;
+  padding-bottom: 0.25em;
 }
 
 .hero__subtitle {
@@ -949,9 +950,10 @@ p {
 
 /* Station title area */
 .station__title {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-2);
   position: relative;
-  overflow: visible;
+  overflow: visible !important;
+  clip-path: none !important;
 }
 
 .station__title-bar {
